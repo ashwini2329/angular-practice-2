@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CounterComponent } from "./counter/counter.component";
+
+import { CounterOutputComponent } from './counter-output/counter-output.component';
+import { CounterControlsComponent } from './counter-controls/counter-controls.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CounterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CounterOutputComponent, CounterControlsComponent],
 })
-export class AppComponent {
-  title = 'angular-practice-2';
-}
+export class AppComponent {}
