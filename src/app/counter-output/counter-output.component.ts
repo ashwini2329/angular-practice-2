@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
 import { selectCount, selectDoubleCount } from '../store/counter.selectors';
+import { selectReducedString } from '../store/string.selectors';
 
 @Component({
   selector: 'app-counter-output',
@@ -13,10 +14,12 @@ import { selectCount, selectDoubleCount } from '../store/counter.selectors';
 })
 export class CounterOutputComponent {
   count$: Observable<number>;
-  doubleCount$: Observable<number>
+  doubleCount$: Observable<number>;
+  reducedString$: Observable<string>
 
-  constructor(private store: Store<{ counter: number }>) {
+  constructor(private store: Store<{ counter: number, changeString: string }>) {
     this.count$ = store.select(selectCount);
-    this.doubleCount$ = store.select(selectDoubleCount)
+    this.doubleCount$ = store.select(selectDoubleCount);
+    this.reducedString$ = store.select(selectReducedString);
   }
 }
