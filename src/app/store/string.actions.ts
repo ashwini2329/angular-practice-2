@@ -7,6 +7,6 @@ export const removeVowels = createAction(
 )
 
 export const addSubstring = createAction(
-  'AddSubstring',
+  'addSubstring',
   props<{value: string}>()
 )

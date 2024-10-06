@@ -25,6 +25,6 @@ export class CounterControlsComponent {
   }
 
   addSubstring() {
-    this.store.dispatch(addSubstring({value: ' technology'}))
+    this.store.dispatch(addSubstring({value: ' Tech Stack'}))
   }
 }
