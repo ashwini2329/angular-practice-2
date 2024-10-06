@@ -13,7 +13,11 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    provideStore({ counter: counterReducer, changeString: stringReducer, addSubstring: addSubstringValue }),
-    provideEffects()
-],
+    provideStore({
+      counter: counterReducer,
+      changeString: stringReducer,
+      addSubstring: addSubstringValue,
+    }),
+    provideEffects(),
+  ],
 };
