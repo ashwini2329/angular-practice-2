@@ -6,6 +6,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideStore } from '@ngrx/store';
 import {counterReducer } from './store/counter.reducer'
 import { addSubstringValue, stringReducer } from './store/string.reducer';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideStore({ counter: counterReducer, changeString: stringReducer, addSubstring: addSubstringValue }),
-  ],
+    provideEffects()
+],
 };
